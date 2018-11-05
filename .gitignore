@@ -1,0 +1,16 @@
+*.uvguix
+*.uvguix.Administrator
+*.uvguix.flyleaf
+*.uvguix.HuiBin
+*.dbgconf
+*.lst
+*.map
+*.dep
+*.crf
+*.o
+*.d
+*.build_log.htm
+*.htm
+*.inp
+*.sct
+*.axf
