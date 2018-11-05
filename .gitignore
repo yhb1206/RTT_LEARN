@@ -2,6 +2,11 @@
 *.uvguix.Administrator
 *.uvguix.flyleaf
 *.uvguix.HuiBin
+*.uvoptx
+*.lnp
+*.uvprojx
+*.scvd
+*.ini
 *.dbgconf
 *.lst
 *.map
@@ -14,3 +19,4 @@
 *.inp
 *.sct
 *.axf
+settings/
