@@ -116,6 +116,7 @@ void delay (uint32_t count)
 	for(; count!=0; count--);
 }
 
+#if 0 /*野火例程*/
 /* 线程1 */
 void flag1_thread_entry( void *p_arg )
 {
@@ -145,3 +146,49 @@ void flag2_thread_entry( void *p_arg )
 		rt_schedule();
 	}
 }
+#elif 1	/*自我修改，发现这样的修改，2个线程的切换还是有600ms的间隔，哎呀*/
+/* 线程1 */
+void flag1_thread_entry( void *p_arg )
+{
+	for( ;; )
+	{
+		/*高*/
+		flag1 = 1;
+		
+		/* 线程切换，这里是手动切换 */		
+		rt_schedule();
+		
+		/*delay( 100 );*/
+
+		/*低*/
+		flag1 = 0;
+		
+		/* 线程切换，这里是手动切换 */
+		rt_schedule();	
+		
+		
+	}
+}
+
+/* 线程2 */
+void flag2_thread_entry( void *p_arg )
+{
+	for( ;; )
+	{
+		/*高*/
+		flag2 = 1;
+		delay( 100 );
+		
+		/* 线程切换，这里是手动切换 */
+		rt_schedule();	
+		
+		/*低*/
+		flag2 = 0;
+		delay( 100 );
+		
+		/* 线程切换，这里是手动切换 */
+		rt_schedule();	
+
+	}
+}
+#endif
