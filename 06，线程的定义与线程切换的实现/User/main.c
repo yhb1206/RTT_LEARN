@@ -159,7 +159,7 @@ void flag1_thread_entry( void *p_arg )
 		rt_schedule();
 		
 		/*delay( 100 );*/
-
+ 
 		/*ตอ*/
 		flag1 = 0;
 		
