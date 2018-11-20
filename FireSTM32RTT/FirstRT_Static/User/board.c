@@ -41,11 +41,10 @@ void rt_hw_board_init()
 	 * SystemFrequency / 1000000 1us中断一次
 	 */
     RCC_ClocksTypeDef  RccClocks;
-    uint32_t SystemClockFrequency = 0, u32Cnt = 0;
+    uint32_t SystemClockFrequency = 0;
     RCC_GetClocksFreq(&RccClocks);
     SystemClockFrequency = RccClocks.HCLK_Frequency;
-    u32Cnt = SystemClockFrequency/RT_TICK_PER_SECOND;
-    while (SysTick_Config(u32Cnt));
+    while (SysTick_Config(SystemClockFrequency/RT_TICK_PER_SECOND));
     
 	/*硬件 BSP 初始化统统放在这里，比如 LED，串口， LCD 等*/
 
