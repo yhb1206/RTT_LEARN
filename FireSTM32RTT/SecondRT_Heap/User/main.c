@@ -58,6 +58,16 @@ int main(void)
                         3, /* 线程的优先级 */
                         20); /* 线程时间片 */
     
+	/* 启动线程，开启调度 */
+    if (led1_thread != RT_NULL)
+    {
+        rt_thread_startup(led1_thread);
+    }
+	else
+	{
+        return -1;
+	}
+	
 #if NUM_PROCESSES == MULTI_PROCESSES    /*多线程开关*/
     led2_thread = /* 线程控制块指针 */
     rt_thread_create(  "led2", /* 线程名字 */    
@@ -66,20 +76,17 @@ int main(void)
                         512, /* 线程栈大小 */
                         4, /* 线程的优先级 */
                         20); /* 线程时间片 */
-#endif
-
-    /* 启动线程，开启调度 */
-    if (led1_thread != RT_NULL)
-    {
-        rt_thread_startup(led1_thread);
-    }
-
-    /* 启动线程，开启调度 */
+    
+	/* 启动线程，开启调度 */
     if (led2_thread != RT_NULL)
     {
         rt_thread_startup(led2_thread);
     }
-
+	else
+	{
+        return -1;
+	}
+	#endif
 }
 
 static void led1_thread_entry(void* parameter)
@@ -102,9 +109,12 @@ static void led2_thread_entry(void* parameter)
 	while (1)
 	{
         LED2_ON;
-        rt_thread_delay(300); /* 挂起延时 500 个 tick */ 
+		rt_kprintf("led2_thread running,LED2_ON\r\n");
+        rt_thread_delay(500); /* 挂起延时 500 个 tick */ 
+		
         LED2_OFF;
-        rt_thread_delay(300); /* 挂起延时 500 个 tick */
+		rt_kprintf("led2_thread running,LED2_OFF\r\n");
+        rt_thread_delay(500); /* 挂起延时 500 个 tick */
     }
 }
 #endif
