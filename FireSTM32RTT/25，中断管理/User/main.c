@@ -155,7 +155,7 @@ static void usart_thread_entry(void* parameter)
   while (1)
   {
 		uwRet = rt_sem_take(test_sem,	/* 获取串口中断的信号量 */
-                        0); 	  /* 等待时间：0 */
+                        RT_WAITING_FOREVER); 	  /* 等待时间：0 */
     if(RT_EOK == uwRet)
     {
       rt_kprintf("收到数据:%s\n",Usart_Rx_Buf);

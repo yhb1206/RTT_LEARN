@@ -16,6 +16,9 @@ uint32_t send_data2 = 2;
   ********************************************************************************/
 void KEY1_IRQHandler(void)
 {
+  /* 进入中断 */
+  rt_interrupt_enter();
+  
   //确保是否产生了EXTI Line中断
 	if(EXTI_GetITStatus(KEY1_INT_EXTI_LINE) != RESET) 
 	{
@@ -26,6 +29,9 @@ void KEY1_IRQHandler(void)
 		//清除中断标志位
 		EXTI_ClearITPendingBit(KEY1_INT_EXTI_LINE);     
 	}  
+  
+  /* 离开中断 */
+  rt_interrupt_leave();
 }
 /*********************************************************************************
   * @ 函数名  ： KEY1_IRQHandler
@@ -35,6 +41,9 @@ void KEY1_IRQHandler(void)
   ********************************************************************************/
 void KEY2_IRQHandler(void)
 {
+  /* 进入中断 */
+  rt_interrupt_enter();
+  
   //确保是否产生了EXTI Line中断
 	if(EXTI_GetITStatus(KEY2_INT_EXTI_LINE) != RESET) 
 	{
@@ -45,18 +54,23 @@ void KEY2_IRQHandler(void)
 		//清除中断标志位
 		EXTI_ClearITPendingBit(KEY2_INT_EXTI_LINE);     
 	}  
+  
+  /* 离开中断 */
+  rt_interrupt_leave();
 }
-/*********************************************************************************
-  * @ 函数名  ： DEBUG_USART_IRQHandler
-  * @ 功能说明： 串口中断服务函数
-  * @ 参数    ： 无  
-  * @ 返回值  ： 无
-  ********************************************************************************/
+
+// 串口中断服务函数
 void DEBUG_USART_IRQHandler(void)
 {
+  /* 进入中断 */
+  rt_interrupt_enter();
+  
 	if(USART_GetITStatus(DEBUG_USARTx,USART_IT_IDLE)!=RESET)
 	{		
       Uart_DMA_Rx_Data();       /* 释放一个信号量，表示数据已接收 */
       USART_ReceiveData(DEBUG_USARTx); /* 清除标志位 */
 	}	 
+  
+  /* 离开中断 */
+  rt_interrupt_leave();
 }
