@@ -20,7 +20,7 @@ rt_inline void rt_list_init(rt_list_t *l)
     l->next = l->prev = l;
 }
 
-/* 在双向链表根节点后面插入一个节点 
+/* 在双向链表指定节点后面插入一个节点 
 *这个函数其实是把节点n插入节点l的后面，
 *其插入的规律是：1指我，我指1，2指我，我指2.
 *在这个函数中其中1代表l->next，我代表n，2代表l。
@@ -35,7 +35,7 @@ rt_inline void rt_list_insert_after(rt_list_t *l, rt_list_t *n)
     n->prev = l;
 }
 
-/* 在双向链表根节点前面插入一个节点 */
+/* 在双向链表指定节点前面插入一个节点 */
 rt_inline void rt_list_insert_before(rt_list_t *l, rt_list_t *n)
 {
     l->prev->next = n;
