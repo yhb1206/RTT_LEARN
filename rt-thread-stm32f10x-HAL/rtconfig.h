@@ -134,10 +134,20 @@
 #define LED_0_PIN 3
 #define LED_1_PIN 4
 
-/* kernel sample select options */
+/* kernel sample select options 要不要无所谓*/
 
-
-
+#define RT_USING_SAMPLE_THREAD
+#define RT_USING_SAMPLE_SEMAPHORE
+#define RT_USING_SAMPLE_MUTEX
+#define RT_USING_SAMPLE_MAILBOX
+#define RT_USING_SAMPLE_EVENT
+#define RT_USING_SAMPLE_MESSAGEQUEUE
+#define RT_USING_SAMPLE_TIMER
+#define RT_USING_SAMPLE_HEAP
+#define RT_USING_SAMPLE_MEMPOOL
+#define RT_USING_SAMPLE_IDLEHOOK
+#define RT_USING_SAMPLE_PRODUCER_CONSUMER
+#define RT_USING_SAMPLE_SIGNAL
 
 
 /* filesystem sample options */
