@@ -17,6 +17,9 @@
 #define RT_DEBUG_THREAD 0
 #define RT_USING_HOOK
 #define IDLE_THREAD_STACK_SIZE 256
+#define RT_USING_TIMER_SOFT
+#define RT_TIMER_THREAD_PRIO 4
+#define RT_TIMER_THREAD_STACK_SIZE 512
 
 /* Inter-Thread communication */
 
@@ -25,6 +28,7 @@
 #define RT_USING_EVENT
 #define RT_USING_MAILBOX
 #define RT_USING_MESSAGEQUEUE
+#define RT_USING_SIGNALS
 
 /* Memory Management */
 
@@ -45,7 +49,7 @@
 #define RT_USING_COMPONENTS_INIT
 #define RT_USING_USER_MAIN
 #define RT_MAIN_THREAD_STACK_SIZE 2048
-#define RT_USING_SIGNALS
+
 /* C++ features */
 
 
@@ -96,11 +100,6 @@
 
 /* RT-Thread online packages */
 
-/* system packages */
-
-/* RT-Thread GUI Engine */
-
-
 /* IoT - internet of things */
 
 
@@ -110,6 +109,9 @@
 
 
 /* Wiced WiFi */
+
+
+/* IoT Cloud */
 
 
 /* security packages */
@@ -124,18 +126,17 @@
 /* tools packages */
 
 
-/* miscellaneous packages */
+/* system packages */
 
 #define PKG_USING_SAMPLES
 
-/* basic sample select options */
+/* peripheral libraries and drivers */
 
 #define RT_USING_SAMPLE_LED
 #define LED_0_PIN 3
 #define LED_1_PIN 4
 
-/* kernel sample select options 要不要无所谓*/
-
+/* miscellaneous packages */
 #define RT_USING_SAMPLE_THREAD
 #define RT_USING_SAMPLE_SEMAPHORE
 #define RT_USING_SAMPLE_MUTEX
@@ -150,16 +151,9 @@
 #define RT_USING_SAMPLE_SIGNAL
 
 
-/* filesystem sample options */
+/* sample package */
 
-
-/* network sample options */
-
-
-/* driver sample options */
-
-
-/* sample autorun options */
+/* samples: kernel and components samples */
 
 
 /* example package: hello */
