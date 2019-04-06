@@ -17,7 +17,7 @@ RT_WEAK void *rt_heap_begin_get(void)
 
 RT_WEAK void *rt_heap_end_get(void)
 {
-    return rt_heap + RT_HEAP_SIZE;
+    return ((uint8_t *)rt_heap + RT_HEAP_SIZE*4 - 1);
 }
 #endif
 
