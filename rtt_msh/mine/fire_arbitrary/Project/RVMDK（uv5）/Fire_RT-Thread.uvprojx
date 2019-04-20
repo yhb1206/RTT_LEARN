@@ -570,19 +570,9 @@
               <FilePath>..\..\User\bsp\Key\bsp_key.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_usart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\User\bsp\usart\bsp_usart.h</FilePath>
-            </File>
-            <File>
               <FileName>bsp_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\bsp\usart\bsp_usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\User\bsp\led\bsp_led.h</FilePath>
             </File>
             <File>
               <FileName>bsp_led.c</FileName>
