@@ -179,7 +179,7 @@
           <Type>0</Type>
           <LineNumber>313</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134253502</Address>
+          <Address>134256770</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -189,6 +189,70 @@
           <Filename>H:\alearningfiles\bMDKfiles\RTT_LEARN\rtt_msh\mine\fire_arbitrary\Project\rtthread\bsp\STM32f103\usart.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\Fire_RT_Thread\../../rtthread/bsp/STM32f103/usart.c\313</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>482</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134254426</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>H:\alearningfiles\bMDKfiles\RTT_LEARN\rtt_msh\mine\fire_arbitrary\Project\rtthread\components\finsh\shell.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Fire_RT_Thread\../../rtthread/components/finsh/shell.c\482</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>509</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134254464</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>H:\alearningfiles\bMDKfiles\RTT_LEARN\rtt_msh\mine\fire_arbitrary\Project\rtthread\components\finsh\shell.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Fire_RT_Thread\../../rtthread/components/finsh/shell.c\509</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>510</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134254470</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>H:\alearningfiles\bMDKfiles\RTT_LEARN\rtt_msh\mine\fire_arbitrary\Project\rtthread\components\finsh\shell.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Fire_RT_Thread\../../rtthread/components/finsh/shell.c\510</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>86</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134252688</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>H:\alearningfiles\bMDKfiles\RTT_LEARN\rtt_msh\mine\fire_arbitrary\Project\rtthread\components\finsh\msh.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Fire_RT_Thread\../../rtthread/components/finsh/msh.c\86</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -200,27 +264,47 @@
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>serial</ItemText>
+          <ItemText>serial1</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>rx_fifo</ItemText>
+          <ItemText>shell</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>new</ItemText>
+          <ItemText>_console_device</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>shell</ItemText>
+          <ItemText>console</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
           <ItemText>ch</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>rx_fifo</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>new</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>dev</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>rx_fifo</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
