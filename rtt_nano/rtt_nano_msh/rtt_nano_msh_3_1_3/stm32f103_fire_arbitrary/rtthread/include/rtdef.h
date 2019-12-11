@@ -1023,7 +1023,7 @@ struct rt_device_graphic_ops
 #endif
 
 /* definitions for libc */
-#if defined (RT_USING_MINILIBC) || (RT_USING_LIBC)
+#if defined (RT_USING_MINILIBC) || defined (RT_USING_LIBC)
 /* definitions for libc */
 #include "rtlibc.h"
 #endif

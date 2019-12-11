@@ -341,7 +341,7 @@ void buffer_init(void)
 }
 
 
-/*==============3.nano finsh移植：finsh线程中断发送环形buffer数据实现部分=================*/
+/*==============3.nano finsh移植：finsh线程中循环发送环形buffer数据实现部分=================*/
 
 static int stm32_putc(USART_TypeDef *uart_device, char c)
 {
