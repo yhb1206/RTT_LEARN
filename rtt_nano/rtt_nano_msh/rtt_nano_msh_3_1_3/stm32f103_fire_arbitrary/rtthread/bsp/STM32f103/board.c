@@ -45,6 +45,7 @@ RT_WEAK void *rt_heap_end_get(void)
 }
 #endif
 
+void SysTick_Init(void);
 
 /**
   * @brief  开发板硬件初始化函数
@@ -57,42 +58,39 @@ RT_WEAK void *rt_heap_end_get(void)
   */
 void rt_hw_board_init()
 {
+    
     /* 初始化SysTick */
-    SysTick_Config( SystemCoreClock / RT_TICK_PER_SECOND );	
+    SysTick_Init();
 
-
+    /*动态内存堆初始化*/
     #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
     rt_system_heap_init(rt_heap_begin_get(), rt_heap_end_get());
     #endif
     
-	/* 硬件BSP初始化统统放在这里，比如LED，串口，LCD等 */
+/* =============*硬件BSP初始化统统放在这里，比如LED，串口，LCD等 =============*/
     
-/* 初始化开发板的LED */
-#ifdef BSP_USING_LED
+    /* 初始化开发板的LED */
+    #ifdef BSP_USING_LED
 	LED_GPIO_Config();
-#endif
+    #endif
 	
-/* 初始化开发板的串口 */
+    /* 初始化开发板的串口 */
 	USART_Config();
 
     /* 按键初始化 */
 	#ifdef BSP_USING_KEY
 	Key_GPIO_Config();
 	#endif
-	
-/* 调用组件初始化函数 (use INIT_BOARD_EXPORT()) */
-#ifdef RT_USING_COMPONENTS_INIT
+
+    /* 调用组件初始化函数 (use INIT_BOARD_EXPORT()) */
+    #ifdef RT_USING_COMPONENTS_INIT
     rt_components_board_init();
-#endif
-    
-#if defined(RT_USING_CONSOLE) && defined(RT_USING_DEVICE)
-	rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
-#endif
-    
-#ifdef RT_USING_FINSH 
+    #endif
+        
+    #ifdef RT_USING_FINSH 
     /*finsh所用中断接受回环区初始化*/
     buffer_init();
-#endif
+    #endif
 
 }
 
@@ -119,6 +117,24 @@ void SysTick_Handler(void)
 }
 
 
+/**
+  * @brief  启动系统滴答定时器 SysTick
+  * @param  无
+  * @retval 无
+  */
+void SysTick_Init(void)
+{
+	   	/* systick中断自适应
+	 *SystemFrequency / 1000       1ms中断1次
+	 * SystemFrequency / 100000	 10us中断1次
+	 * SystemFrequency / 1000000   1us中断1次
+	 */
+    RCC_ClocksTypeDef  RccClocks;
+    uint32_t SystemClockFrequency = 0;
+    RCC_GetClocksFreq(&RccClocks);
+    SystemClockFrequency = RccClocks.HCLK_Frequency;
+    while (SysTick_Config(SystemClockFrequency/RT_TICK_PER_SECOND));
+}
 
 #ifndef RT_USING_FINSH 
 
