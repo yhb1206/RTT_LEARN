@@ -92,12 +92,11 @@ void USART_Config(void)
 	USART_ITConfig(DEBUG_USARTx, USART_IT_RXNE, ENABLE);	
 	
 	// Ê¹ÄÜ´®¿Ú
-      USART_Cmd(DEBUG_USARTx, ENABLE);	    
+	USART_Cmd(DEBUG_USARTx, ENABLE);	    
     
 //#ifdef RT_USING_FINSH 
 //    /* enable rx irq */
 //    UART_ENABLE_IRQ(DEBUG_USARTx->DEBUG_USART_IRQ);
-
 //    /* enable interrupt */
 //    USART_ITConfig(DEBUG_USARTx, USART_IT_RXNE, ENABLE);
 //#endif
